@@ -9,13 +9,15 @@ local player_unit = df.global.world.units.active[0]
 assert(player_unit, "Can't find player unit!")
 
 for _, plant in pairs(df.global.world.plants.all) do
-	if plant.tree_info == nil and plant.material == mat_info.index then
+	if plant.tree_info == nil and
+		not plant.damage_flags.is_dead and
+		plant.material == mat_info.index then
 		-- print(v)
 		-- always ends with :STRUCTURAL but is a number
-		print(plant.material)
+		-- print(plant.material)
 
 		-- found in tile-material.lua
-		print(dfhack.matinfo.decode(419, plant.material))
+		-- print(dfhack.matinfo.decode(419, plant.material))
 
 		-- See Material info lookup in "Lua API.rst.txt"
 		-- print(dfhack.matinfo.find(plant.material))
@@ -34,6 +36,6 @@ for _, plant in pairs(df.global.world.plants.all) do
 
 		new_item.pos = xyz2pos(pos2xyz(plant.pos))
 
-		-- plant.pos
+		new_item.stack_size = 1 + math.random(0, 2)
 	end
 end
