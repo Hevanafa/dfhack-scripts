@@ -4,6 +4,8 @@
 -- print(df.item_type.COIN)
 -- do return end
 
+-- 10-06-2023
+
 local cursor = df.global.cursor
 assert(cursor, "(l)ook mode is required!")
 
@@ -15,8 +17,8 @@ for _, item in pairs(df.global.world.items.all) do
 	if item:getType() == df.item_type.COIN and
 		same_xyz(cursor, item.pos) then
 
-		-- Todo: mat_index & batch
-		print(item.mat_index, item.coin_batch)
+		-- print(item.mat_index, item.coin_batch)
+
 		local key = ("%d %d"):format(item.mat_index, item.coin_batch)
 
 		if counts[key] == nil then
