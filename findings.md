@@ -8,6 +8,8 @@ keybinding add/set - add a new hotkey/keybinding
 
 keybinding clear
 
+gui/create-item - create 1 item (anything)
+
 A few lines that I added to `dfhack.init` for advfort:
 ```
 keybinding add Alt-T@dungeonmode "gui/advfort FellTree"
@@ -50,7 +52,39 @@ for _, unit in pairs(df.global.world.units.all) do
 end
 ```
 
+How to get x, y, z:
+
+Use pos2xyz
+
+```lua
+local x, y, z = pos2xyz(df.global.cursor)
+local pos = xyz2pos(x, y, z)
+```
+
+How to get the player unit:
+
+```lua
+local unit = df.global.world.units.active[0]
+```
+
+How to stop script when receiving an error:
+
+```lua
+qerror(message)
+assert(variable, message)
+```
+
+How to check if a unit is alive:
+
+```lua
+dfhack.units.isAlive(unit)
+```
+
 Whenever I got stuck, I usually either:
 - search for any related keywords in the whole `hack` folder
 - go to the [DFHack GitHub](https://github.com/DFHack/dfhack) & see if I can find the original struct/enum
 
+
+## How to keep builds in the wilderness
+
+Chop tree but use the original DF fell tree -- use <kbd>g</kbd> in adventure mode.  This will turn the chunk into something like "Unnamed Unimportant Site".  This is useful if you don't want to make a 3x3 camp.

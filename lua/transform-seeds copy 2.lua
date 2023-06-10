@@ -5,8 +5,32 @@
 
 local cursor = copyall(df.global.cursor)
 
+
+local nearest_unit
+local nearest = 10000
+
+for _, unit in pairs(df.global.world.units.all) do
+    local pos = copyall(unit.pos)
+    local dist = math.sqrt((cursor.x - pos.x) ^ 2 + (cursor.y - pos.y) ^ 2 + (cursor.z - pos.z) ^ 2)
+
+    if nearest > dist then
+        nearest = dist
+        nearest_unit = unit
+        break
+    end
+end
+
+
+if nearest_unit == nil then
+    qerror("Can't find the nearest unit!")
+end
+
+print(("Who is the nearest unit? %s"):format(dfhack.units.getRaceName(nearest_unit)))
+print(("Distance: %.2f"):format(nearest))
 local player_unit = df.global.world.units.active[0]
-assert(player_unit, "Can't find player unit!")
+local dist = math.sqrt((cursor.x - player_unit.pos.x) ^ 2 + (cursor.y - player_unit.pos.y) ^ 2 + (cursor.z - player_unit.pos.z) ^ 2)
+print(("Distance from player: %.2f"):format(dist))
+do return end
 
 local count = 0
 
@@ -29,7 +53,7 @@ for _, item in pairs(df.global.world.items.all) do
             dfhack.items.createItem(
                 item_type, subtype,
                 mat_type, mat_index,
-                player_unit))
+                nearest_unit))
         
         local stack_size = 1 + math.random(0, 2)
         new_item:setStackSize(stack_size)
@@ -45,9 +69,9 @@ for _, item in pairs(df.global.world.items.all) do
         print("Old item ID:" .. item.id)
         print("New item ID:" .. new_item.id)
 
-        dfhack.items.remove(
-            df.item.find(item.id)
-        )
+        -- dfhack.items.remove(
+        --     df.item.find(item.id)
+        -- )
 
         count = count + stack_size
     end
