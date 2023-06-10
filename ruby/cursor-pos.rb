@@ -1,0 +1,1 @@
+puts "%d %d %d" % [df.cursor.x, df.cursor.y, df.cursor.z]
