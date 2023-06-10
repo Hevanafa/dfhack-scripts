@@ -10,7 +10,7 @@ Based on devel/hello-world: a basic GUI screen example
 
 local gui = require("gui")
 local widgets = require('gui.widgets')
-local overlay = require('plugins.overlay')
+-- local overlay = require('plugins.overlay')
 
 -- local text = "enhanced advfort GUI"
 
