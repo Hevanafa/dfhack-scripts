@@ -88,3 +88,16 @@ Whenever I got stuck, I usually either:
 ## How to keep builds in the wilderness
 
 Chop tree but use the original DF fell tree -- use <kbd>g</kbd> in adventure mode.  This will turn the chunk into something like "Unnamed Unimportant Site".  This is useful if you don't want to make a 3x3 camp.
+
+
+11-06-2023
+
+## About Glass Furnace
+
+**Collect Sand** works just like the usual (g)et sand, but you should have your adventurer's both hands full so that the sand can go directly into your backpack.
+
+Then, (p)ut each unit of sand into bags.
+
+**Make raw green glass** in glass furnace will turn **all** sand in the bag into just 1 unit of raw glass.
+
+It's better to find a volcano or use `liquids` command first before making any kind of magma-related workshops.

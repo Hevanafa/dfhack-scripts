@@ -22,7 +22,7 @@ for _, item in pairs(df.global.world.items.all) do
 		local key = ("%d %d"):format(item.mat_index, item.coin_batch)
 
 		if counts[key] == nil then
-			first_refs[key] = item
+			first_refs[key] = item.id
 			counts[key] = item.stack_size
 		else
 			counts[key] = (counts[key] or 0) + item.stack_size
@@ -41,7 +41,7 @@ end
 -- Remove items that aren't the first
 for _, item in pairs(registered) do
 	for _, ref in pairs(first_refs) do
-		if item == ref then
+		if item.id == ref.id then
 			goto safe
 		end
 	end

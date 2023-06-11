@@ -17,7 +17,7 @@ for _, item in pairs(df.global.world.items.all) do
 
         if counts[item.mat_index] == nil then
             counts[item.mat_index] = item.stack_size
-            first_refs[item.mat_index] = item
+            first_refs[item.mat_index] = item.id
         else
             counts[item.mat_index] = counts[item.mat_index] + item.stack_size
         end
@@ -34,7 +34,7 @@ end
 -- Delete items that aren't first ref
 for _, item in pairs(registered) do
     for _, ref in pairs(first_refs) do
-        if item == ref then
+        if item.id == ref.id then
             goto safe
         end
     end
