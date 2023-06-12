@@ -101,3 +101,25 @@ Then, (p)ut each unit of sand into bags.
 **Make raw green glass** in glass furnace will turn **all** sand in the bag into just 1 unit of raw glass.
 
 It's better to find a volcano or use `liquids` command first before making any kind of magma-related workshops.
+
+
+## About Farm Plots
+
+Farm plots can only yield 1 type of harvest.  So it's better to make smaller plots instead of making a big one at once.
+
+There is "fortress seed count limit".  So your planted seeds will disappear once it reach the threshold.
+
+There's a frequent case where farm plots are just 'reset'.
+
+I think it's better to make your own barrels or bags, sell them to the merchants in the town, cheat spawn plants, combine the plants with my script, then put them in the barrels/bags.  Usually the maximum stack is around 60 for plant items.
+
+
+## How to get unit's name
+
+Found this in `make-legendary.lua`
+
+```lua
+function getName(unit)
+    return dfhack.df2console(dfhack.TranslateName(dfhack.units.getVisibleName(unit)))
+end
+```
