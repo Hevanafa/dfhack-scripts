@@ -123,3 +123,34 @@ function getName(unit)
     return dfhack.df2console(dfhack.TranslateName(dfhack.units.getVisibleName(unit)))
 end
 ```
+
+
+15-06-2023
+
+## How to Start Clear Glass Industry
+
+1. Get some wood, bags of sand & some fire-safe materials,
+2. Make these workshops:
+	- wood furnace
+	- ashery
+	- kiln
+	- either magma or normal glass furnace
+3. Burn wood logs into ash 'bars' in the wood furnace,
+4. Make potash from ash in the ashery,
+4. Make pearlash (from potash) 'bars' in the kiln,
+5. Bring the bag of sand & pearlash 'bars' to the glass furnace.
+
+
+## How to Collect Clay
+
+Dwarf fortress mode: Designate a collection area for clay
+
+Adventure mode: You can't.  You'll need to cheat for inorganic clay boulders or mine for kaolinite.
+
+
+## Buillding orientations
+
+0: west to east  ->
+1: east to west  <-
+2: north to south
+3: south to north
