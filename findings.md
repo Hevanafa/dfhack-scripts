@@ -154,3 +154,66 @@ Adventure mode: You can't.  You'll need to cheat for inorganic clay boulders or 
 1: east to west  <-
 2: north to south
 3: south to north
+
+
+16-06-2023
+
+## How to make steel
+
+Flux stones:
+- calcite
+- chalk
+- dolomite
+- limestone
+- marble
+
+Sources of fuel & carbon:
+- bituminous coal (smelter, 9 coke)
+- lignite (smelter, 5 coke)
+- wood (wood furnace, 1 charcoal)
+
+### Steps
+
+Prepare:
+
+- 2 bars of iron
+- 2 flux boulders
+- 4 units of fuel (only 2 if there's magma)
+
+Stand at the Smelter,
+
+Then, follow these steps:
+
+1. Make pig iron bars:
+	- iron
+	- carbon
+	- flux stone
+	- fuel
+2. Make the steel bars:
+	- pig iron
+	- iron
+	- carbon (either charcoal or coke)
+	- flux stone
+	- fuel
+
+Result: 2 bars of steel
+
+
+### How to find flux stones
+
+Use `reveal`, then `prospect`.
+
+Usually, the names are under "Layer materials".
+
+Refs:
+https://dwarffortresswiki.org/index.php/Flux
+https://dwarffortresswiki.org/index.php/DF2014:Steel
+
+
+## About Stud with Gold
+
+In advfort, NEVER decorate/adorn anything.
+
+The item will disappear instead of getting decorated as expected.
+
+To see yourself, make a training sword/spear/axe, then decorate it at the craftdwarf's workshop.

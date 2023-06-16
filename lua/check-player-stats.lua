@@ -8,3 +8,7 @@ end
 print(("Hunger: %d"):format(unit.counters2.hunger_timer))
 print(("Thirst: %d"):format(unit.counters2.thirst_timer))
 print(("Sleepiness: %d"):format(unit.counters2.sleepiness_timer))
+
+if unit.counters.webbed > 0 then
+	print(("Webbed: %d"):format(unit.counters.webbed))
+end
