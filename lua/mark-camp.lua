@@ -1,3 +1,5 @@
+-- By Hevanafa, 17-06-2023
+--
 -- Based off of the script advfort.lua and in-site.lua
 
 local map = df.global.world.map

@@ -1,4 +1,6 @@
--- Based off of the script advfort.lua
+-- By Hevanafa, 17-06-2023
+-- 
+-- Based off of the script `advfort.lua`
 
 local map = df.global.world.map
 local unit = df.global.world.units.active[0]

@@ -233,7 +233,7 @@ Use `full-heal`.
 For my liking, I disabled resetting hunger_timer, thirst_timer & sleepiness_timer to make it still necessary to eat, drink & rest.
 
 
-## How to get the active unit
+## How to get the selected unit
 
 Use:
 ```lua
@@ -260,10 +260,32 @@ WorldData :sites (stl_vector)
 
 Added `mark-camp.lua`.
 
+To make this a 1x1 site, fell tree first, then call `mark-camp.lua`.
+
 To change the site's name, press `b` then `N`.  Currently, there's no way to remove the name.
+
+Caution: any dug tiles or felled trees will be permanent, so it's not recommended if you want to get unlimited resources.
 
 
 ## How to get a readable name
 
-Example:
-dfhack.TranslateName(site.name)
+Use `dfhack.TranslateName(site.name)`.
+
+See `LanguageNameComponent` for the details.
+
+
+## How to obtain the complete recipe (for workshops)
+
+Use `add-recipe`.
+
+
+## How to 'fast travel'
+
+Use `questport` while looking at the (Q)uest map.
+
+
+## About Town Slab Engravings
+
+There's the class SlabEngravingType.  I wonder if I can manipulate it.
+
+Found `getSlabEngravingType()` in the class `Item`, which returns `SlabEngravingType` enum.
