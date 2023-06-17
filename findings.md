@@ -217,3 +217,53 @@ In advfort, NEVER decorate/adorn anything.
 The item will disappear instead of getting decorated as expected.
 
 To see yourself, make a training sword/spear/axe, then decorate it at the craftdwarf's workshop.
+
+
+17-06-2023
+
+## About advfort not working when there's no Dwarf civ
+
+Simply change set_civ to true in settings, in `advfort.lua`.
+
+
+## Cheating Health
+
+Use `full-heal`.
+
+For my liking, I disabled resetting hunger_timer, thirst_timer & sleepiness_timer to make it still necessary to eat, drink & rest.
+
+
+## How to get the active unit
+
+Use:
+```lua
+local unit = dfhack.gui.getSelectedUnit(true)
+```
+
+
+## How to domesticate/tame a unit
+
+See `domesticateUnit` in `create-unit.lua`.
+
+
+## Where is Camp?
+
+:Camp is in the class `WorldSiteType`
+
+See class WorldSite too.  Lua equivalent: <world_site>
+
+I want to create my own site with DFHack.
+
+World sites vector: `df.global.world.world_data.sites`
+
+WorldData :sites (stl_vector)
+
+Added `mark-camp.lua`.
+
+To change the site's name, press `b` then `N`.  Currently, there's no way to remove the name.
+
+
+## How to get a readable name
+
+Example:
+dfhack.TranslateName(site.name)
