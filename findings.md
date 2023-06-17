@@ -291,3 +291,14 @@ There's the class SlabEngravingType.  I wonder if I can manipulate it.
 Found `getSlabEngravingType()` in the class `Item`, which returns `SlabEngravingType` enum.
 
 Added `list-slabs-cursor.lua` and `change-slabs-cursor.lua`.
+
+Found `SiteRealizationBuildingType`.
+
+
+## How to Change Profession
+
+Found class `Profession`
+Can be used in unit.profession
+
+Added `change-player-prof.lua`
+
