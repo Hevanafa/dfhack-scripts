@@ -289,3 +289,5 @@ Use `questport` while looking at the (Q)uest map.
 There's the class SlabEngravingType.  I wonder if I can manipulate it.
 
 Found `getSlabEngravingType()` in the class `Item`, which returns `SlabEngravingType` enum.
+
+Added `list-slabs-cursor.lua` and `change-slabs-cursor.lua`.
