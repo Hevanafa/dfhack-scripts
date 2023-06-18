@@ -15,13 +15,17 @@ A few lines that I added to `dfhack.init` for advfort:
 keybinding add Alt-T@dungeonmode "gui/advfort FellTree"
 keybinding add Alt-D@dungeonmode "gui/advfort Dig"
 keybinding add Alt-B@dungeonmode "gui/advfort Build"
+keybinding add Alt-H@dungeonmode "gui/advfort DigChannel"
 ```
 
 - <key>Alt+T</key> for felling tree
 - <key>Alt+D</key> for digging
 - <key>Alt+B</key> for building
+- <key>Alt+H</key> for digging a channel
 
 This makes it kind of similar to Minecraft.
+
+Edit 18-06-2023: Added dig channel
 
 
 How to obtain the active/selected unit ID:
@@ -286,13 +290,20 @@ Use `questport` while looking at the (Q)uest map.
 
 ## About Town Slab Engravings
 
-There's the class SlabEngravingType.  I wonder if I can manipulate it.
+There's the class `SlabEngravingType`.  I wonder if I can manipulate it.
 
 Found `getSlabEngravingType()` in the class `Item`, which returns `SlabEngravingType` enum.
 
 Added `list-slabs-cursor.lua` and `change-slabs-cursor.lua`.
 
+See the class `SlabEngravingType` for the engraving types.
+
+
+## Random Findings
+
 Found `SiteRealizationBuildingType`.
+Found enum class `JobType`
+Lua equivalent: df.job_type
 
 
 ## How to Change Profession
@@ -302,3 +313,82 @@ Can be used in unit.profession
 
 Added `change-player-prof.lua`
 
+
+## How to add announcement (also append to gamelog.txt)
+
+Use `dfhack.gui.showAnnouncement(msg, fg, bg)`
+
+
+## TWBT (fancy DF ASCII shader thing)
+
+https://github.com/thurin/df-twbt/releases/tag/0.47.05-r8
+
+Copy the DLL file to DFHack's plugins folder.
+
+Copy the transparent1px.png, white1px.png, shadows.png to your `data\art` folder.
+
+Add these lines to dfhack.init:
+```
+# TWBT
+multilevel 15
+```
+
+## How to add action (WIP)
+
+addJobAction(job, unit)
+
+Find make_native_job(args) in advfort
+df.job:new()
+
+PlantGatherFix
+cur_mode[3]
+post_actions = cur_mode[4]
+```lua
+job_ptr = adv.job.current_job
+job_action = findAction(adv, df.unit_action_type.Job)
+ContinueJob(adv)
+-- c_job = unit.job.current_job
+addJobAction(c_job,unit)
+
+-- addJobAction()
+local data = {type=df.unit_action_type.Job,data={job={x=pos.x,y=pos.y,z=pos.z,timer=10}}}
+add_action(unit, data)
+
+--
+--[[    low level job management    ]]--
+function findAction(unit,ltype)
+    ltype=ltype or df.unit_action_type.None
+    for i,v in ipairs(unit.actions) do
+        if v.type==ltype then
+            return v
+        end
+    end
+end
+
+-- add_action()
+action = findAction(unit) -- find empty action
+local tbl=copyall(action_data)
+tbl.new=true
+tbl.id=unit.next_action_id
+unit.actions:insert("#", tbl)
+unit.next_action_id=unit.next_action_id+1
+```
+
+
+18-06-2023
+
+## About scattered quires in the camp
+
+After trying with the stolen codices & scrolls, the items placed inside a display case don't move anymore.
+
+
+Idea: try to assign an owner civ so that I can retire at my own camp
+
+
+## About pearlash
+
+When `set_civ` is set to `true` in `advfort.lua`, "make pearlash" option isn't available.  So it should be set to "MOUNTAIN"
+
+
+
+Idea: bring underworld demons to the surface
