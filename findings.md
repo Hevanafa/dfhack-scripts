@@ -152,7 +152,7 @@ Dwarf fortress mode: Designate a collection area for clay
 Adventure mode: You can't.  You'll need to cheat for inorganic clay boulders or mine for kaolinite.
 
 
-## Buillding orientations
+## Building Orientation / Direction
 
 0: west to east  ->
 1: east to west  <-
@@ -390,5 +390,12 @@ Idea: try to assign an owner civ so that I can retire at my own camp
 When `set_civ` is set to `true` in `advfort.lua`, "make pearlash" option isn't available.  So it should be set to "MOUNTAIN"
 
 
+20-06-2023
+
+## How-to: Clean Blood pools & spatters at the map
+
+Use: `clean map`
 
 Idea: bring underworld demons to the surface
+
+
