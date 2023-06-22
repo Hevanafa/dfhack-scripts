@@ -399,3 +399,21 @@ Use: `clean map`
 Idea: bring underworld demons to the surface
 
 
+22-06-2023
+
+Found `item:moveToGround(x, y, z)`
+Found item:getStorageInfo
+Found item:setTemperature(temp, local, contained)
+Found item:getItemBasicName(arg0)
+Found item:getCurrencyValue(appraiser)
+
+Found dfhack.items.getContainedItems(item) in advfort > AddItem()
+Found dfhack.items.moveToBuilding(v.item,building,0)
+
+in build-now.lua:
+Found dfhack.items.getHolderBuilding(item)
+Found ref:getType() == df.general_ref_type.BUILDING_HOLDER
+
+To print an error message:
+`dfhack.printerr`
+

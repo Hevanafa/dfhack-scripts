@@ -1,7 +1,9 @@
 -- 16-06-2023
 
+local cur = copyall(df.global.cursor)
+
 for _, item in pairs(df.global.world.items.all) do
-    if item.flags.trader then
+    if same_xyz(cur, item.pos) and item.flags.owned then
 
         -- local item_type = item:getType()
         -- local x, y, z = pos2xyz(item.pos)
