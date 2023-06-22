@@ -417,3 +417,12 @@ Found ref:getType() == df.general_ref_type.BUILDING_HOLDER
 To print an error message:
 `dfhack.printerr`
 
+
+## How to Declutter Workshops
+
+Use `pull-building-seeds`, then `combine-seeds-cursor`.
+
+
+Idea: drop items from a unit with `getHolderUnit` and `moveToGround` at the unit's position, then use `combine-plant-growths`, particularly useful when gathering fruits
+
+Found dfhack.items.getHolderUnit in `Lua API.txt`
