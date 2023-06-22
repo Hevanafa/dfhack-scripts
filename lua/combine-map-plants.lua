@@ -29,6 +29,7 @@ for key, count in pairs(plantCounts) do
     print(("%s [%d]"):format(key, count))
 
     plantRefs[key].stack_size = plantCounts[key]
+	plantRefs[key]:calculateWeight()
 end
 
 

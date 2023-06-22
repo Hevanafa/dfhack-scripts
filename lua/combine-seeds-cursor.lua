@@ -1,9 +1,4 @@
--- for k, v in pairs(df.item_type) do
---     print(("%s: %s"):format(k, v))
--- end
--- print(df.item_type.COIN)
--- do return end
-
+-- A script to combine plant growths: fruits & bulbs
 -- 10-06-2023
 
 local cursor = df.global.cursor
@@ -14,15 +9,23 @@ local first_refs = {}
 local registered = {}
 
 for _, item in pairs(df.global.world.items.all) do
-	if item:getType() == df.item_type.COIN and
+	if item:getType() == df.item_type.SEEDS and
+		item.flags.on_ground and
 		not item.flags.in_inventory and
 		same_xyz(cursor, item.pos) then
 
 		local item_id = item.id
 
+		-- print(item:getType(), item.mat_index)
+
 		-- print(item.mat_index, item.coin_batch)
 
-		local key = ("%d %d"):format(item.mat_index, item.coin_batch)
+		local key = ("%d %d"):format(
+			item.mat_type,
+			item.mat_index
+		)
+
+		print(key)
 
 		if counts[key] == nil then
 			first_refs[key] = item_id
@@ -37,7 +40,10 @@ end
 
 for _, item_id in pairs(first_refs) do
 	local item = df.item.find(item_id)
-	local key = ("%d %d"):format(item.mat_index, item.coin_batch)
+	local key = ("%d %d"):format(
+		item.mat_type,
+		item.mat_index)
+
 	print(key, counts[key])
 	item.stack_size = counts[key]
 	item:calculateWeight()

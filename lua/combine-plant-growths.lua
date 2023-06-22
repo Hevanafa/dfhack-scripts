@@ -1,9 +1,4 @@
--- for k, v in pairs(df.item_type) do
---     print(("%s: %s"):format(k, v))
--- end
--- print(df.item_type.COIN)
--- do return end
-
+-- A script to combine plant growths: fruits & bulbs
 -- 10-06-2023
 
 local cursor = df.global.cursor
@@ -15,6 +10,8 @@ local registered = {}
 
 for _, item in pairs(df.global.world.items.all) do
 	if item:getType() == df.item_type.PLANT_GROWTH and
+	-- if item:getType() == df.item_type.SEEDS and
+		item.flags.on_ground and
 		not item.flags.in_inventory and
 		same_xyz(cursor, item.pos) then
 
