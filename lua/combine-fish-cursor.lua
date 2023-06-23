@@ -1,5 +1,4 @@
--- A script to combine plant growths: fruits & bulbs
--- 10-06-2023
+-- By Hevanafa, 22-06-2023
 
 local cursor = copyall(df.global.cursor)
 assert(cursor, "(l)ook mode is required!")
@@ -8,25 +7,23 @@ local counts = {}
 local first_refs = {}
 local registered = {}
 
--- Scan the items
+function get_key(item)
+    return ("%d %d"):format(
+        item.race,
+        item.caste
+    )
+end
+
 for _, item in pairs(df.global.world.items.all) do
-	if item:getType() == df.item_type.SEEDS and
-		item.flags.on_ground and
-		not item.flags.in_inventory and
-		same_xyz(cursor, item.pos) then
+    if item:getType() == df.item_type.FISH and
+        item.flags.on_ground and
+        same_xyz(cursor, item.pos) then
 
-		local item_id = item.id
+        local item_id = item.id
 
-		-- print(item:getType(), item.mat_index)
-
-		-- print(item.mat_index, item.coin_batch)
-
-		local key = ("%d %d"):format(
-			item.mat_type,
-			item.mat_index
-		)
-
-		print(key)
+        local key = get_key(item)
+    
+        print(("%s [%d]"):format(key, item.stack_size))
 
 		if counts[key] == nil then
 			first_refs[key] = item_id
@@ -36,15 +33,13 @@ for _, item in pairs(df.global.world.items.all) do
 		end
 
 		table.insert(registered, item_id)
-	end
+    end
 end
 
 -- Apply stack size for each first items
 for _, item_id in pairs(first_refs) do
 	local item = df.item.find(item_id)
-	local key = ("%d %d"):format(
-		item.mat_type,
-		item.mat_index)
+	local key = get_key(item)
 
 	print(key, counts[key])
 	item.stack_size = counts[key]
