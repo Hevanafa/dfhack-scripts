@@ -426,3 +426,20 @@ Use `pull-building-seeds`, then `combine-seeds-cursor`.
 Idea: drop items from a unit with `getHolderUnit` and `moveToGround` at the unit's position, then use `combine-plant-growths`, particularly useful when gathering fruits
 
 Found dfhack.items.getHolderUnit in `Lua API.txt`
+
+
+24-06-2023
+
+## How to Retire at Your Own Camp
+
+1. Mark your important location first as a camp
+2. Build (key: b)
+3. Assign zones/rooms (key: z)
+4. Add location (key: a)
+5. Make it the main hall
+6. Close the build menu
+7. Shout to everyone (key: k)
+8. Claim this location for yourself
+9. Set the group name
+10. Be in the main hall
+
