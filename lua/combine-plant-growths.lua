@@ -29,7 +29,7 @@ for _, item in pairs(df.global.world.items.all) do
 			-- item.rot_timer
 		)
 
-		print(key)
+		-- print(key)
 
 		if counts[key] == nil then
 			first_refs[key] = item_id

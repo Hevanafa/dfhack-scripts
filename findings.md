@@ -426,3 +426,10 @@ Use `pull-building-seeds`, then `combine-seeds-cursor`.
 Idea: drop items from a unit with `getHolderUnit` and `moveToGround` at the unit's position, then use `combine-plant-growths`, particularly useful when gathering fruits
 
 Found dfhack.items.getHolderUnit in `Lua API.txt`
+
+
+23-06-2023
+
+## Maximum barrel capacity
+
+30 units of fish/raw fish
