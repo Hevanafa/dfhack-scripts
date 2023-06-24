@@ -5,8 +5,8 @@
 local count = 0
 
 for _, item in pairs(df.global.world.items.all) do
-	-- if item:getType() == df.item_type.SEEDS then
-	if item:getType() == df.item_type.CORPSEPIECE then
+	if item:getType() == df.item_type.SEEDS then
+	-- if item:getType() == df.item_type.CORPSEPIECE then
 		local building = dfhack.items.getHolderBuilding(item)
 		if not building then goto next end
 

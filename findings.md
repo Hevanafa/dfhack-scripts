@@ -460,3 +460,33 @@ Edit: it's not possible to set up cage traps for some reason -- it doesn't get t
 ## How to extend an existing camp
 
 Added `extend-camp.lua` script
+
+
+## Where actually is the date GUI?
+
+`hack/lua/plugins/dwarfmonitor.lua`
+~~I changed the default y from 1 to 2 like this:~~
+```lua
+DateWidget.ATTRS{
+    default_pos={x=-16,y=2},
+	-- ...
+}
+```
+
+Open `dfhack-config\dwarfmonitor.json` instead, and change the position Y to 1
+
+
+## How to resurrect a recently deceased unit
+
+Use `heva/lua/list-unit-ids`
+Find the unit that you want to resurrect
+Use `full-heal -r -unit [ID]`
+The corpse will stay there and your unit will return
+It's recommended to dispose of your corpse in a campfire or lava
+
+
+## How much exactly is the capacity of a pouch?
+
+100 units of something
+
+1600 coins in total
