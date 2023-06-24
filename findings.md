@@ -449,3 +449,14 @@ Found dfhack.items.getHolderUnit in `Lua API.txt`
 9. Set the group name
 10. Be in the main hall
 
+
+## About Cage Traps
+
+I think it's possible to cage a live animal by first setting up a cage trap and then use `bodyswap` at that creature, and then finally walking into the trap.
+
+Edit: it's not possible to set up cage traps for some reason -- it doesn't get triggered or even finish being built
+
+
+## How to extend an existing camp
+
+Added `extend-camp.lua` script
