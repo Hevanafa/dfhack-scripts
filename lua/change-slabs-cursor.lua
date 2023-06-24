@@ -11,7 +11,7 @@ for _, item in pairs(df.global.world.items.all) do
         -- print(item:getSlabEngravingType())
 
         -- item.engraving_type = 18
-		item.description = "Armour Training"
+		item.description = "Garbage Disposal"
 
         print(("Description: \"%s\""):format(item.description))
         print(("Topic: %d"):format(item.topic))

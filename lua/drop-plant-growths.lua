@@ -10,9 +10,8 @@ for _, item in pairs(df.global.world.items.all) do
 		local container = dfhack.items.getContainer(item)
 
 		if container and container:getType() == df.item_type.BACKPACK then -- dfhack.items.getHolderUnit(item) == unit
-				dfhack.items.moveToGround(item, unit.pos)
-				count = count + 1
-			end
+			dfhack.items.moveToGround(item, unit.pos)
+			count = count + 1
 		end
 	end
 end

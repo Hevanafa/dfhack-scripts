@@ -23,7 +23,7 @@ for _, item in pairs(df.global.world.items.all) do
 
         local key = get_key(item)
     
-        print(("%s [%d]"):format(key, item.stack_size))
+        -- print(("%s [%d]"):format(key, item.stack_size))
 
 		if counts[key] == nil then
 			first_refs[key] = item_id

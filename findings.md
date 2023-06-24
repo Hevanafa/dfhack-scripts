@@ -428,6 +428,12 @@ Idea: drop items from a unit with `getHolderUnit` and `moveToGround` at the unit
 Found dfhack.items.getHolderUnit in `Lua API.txt`
 
 
+23-06-2023
+
+## Maximum barrel capacity
+
+30 units of fish/raw fish
+
 24-06-2023
 
 ## How to Retire at Your Own Camp
