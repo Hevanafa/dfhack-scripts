@@ -4,5 +4,6 @@ if not unit then
 end
 
 print(unit.profession)
-unit.profession = 66  -- TRADER
+-- unit.profession = 66  -- TRADER
+unit.profession = 128  -- TAVERN_KEEPER
 print("New profession: " .. unit.profession)

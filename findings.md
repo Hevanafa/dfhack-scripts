@@ -490,3 +490,28 @@ It's recommended to dispose of your corpse in a campfire or lava
 100 units of something
 
 1600 coins in total
+
+
+25-06-2023
+
+Found "WorldSiteRealization"
+- mini_rivers
+- mini_tiles
+- mini_colors
+- road_map
+- river_map
+- building_map
+- flags_map
+- zoom_tiles
+- zoom_colors
+- areas
+- building_well
+
+
+## About Demon Corpses
+
+After killing a demon, it is **strongly** recommended not to touch the corpse.  Walking over it is okay, but not (g)etting it.
+
+For some reason, the demons at the surface (if any) can teleport & find the player pretty quickly.  Added with how fast they run, it's terrifying.
+
+Demons can be killed by crushing them under a constructed floor trap linked with a support & a lever.

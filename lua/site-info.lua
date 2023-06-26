@@ -1,13 +1,11 @@
 -- By Hevanafa, 17-06-2023
 --
--- Based off of the script advfort.lua and in-site.lua
+-- Based off of the script mark-camp.lua
 
 local map = df.global.world.map
 local unit = df.global.world.units.active[0]
 
 local tx, ty = math.floor(map.region_x + unit.pos.x / 48), math.floor(map.region_y + unit.pos.y / 48)
-
--- local tx,ty=advGlobalPos()
 
 for k, site in pairs(df.global.world.world_data.sites) do
     local tp={site.pos.x, site.pos.y}
@@ -17,10 +15,19 @@ for k, site in pairs(df.global.world.world_data.sites) do
 
         local translated = dfhack.TranslateName(site.name)
         print(("Site: %s"):format(#translated > 0 and translated or "(Unnamed site)"))
-        -- print("Type: " .. site.type)
-        site.type = 9 -- CAMP
-        -- print("New site type: " .. site.type)
-        print("Marked this site as camp.")
+        print("Type: " .. site.type)
+        print(("Civ ID: %d"):format(site.civ_id))
+        print(("Current owner ID: %d"):format(site.cur_owner_id))
+        print(site.property_ownership)
+        print(site.realization)
+        if site.realization then
+            local props = site.realization
+
+            print(props.num_buildings)
+
+            print(props.mini_tiles[0][0])
+        end
+
         return
     end
 end

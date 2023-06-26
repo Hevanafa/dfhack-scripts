@@ -15,7 +15,7 @@ end
 table.sort(race_names)
 
 if #race_names == 0 then
-    print("There are no creatures in this world.")
+    print("There are no creatures in this map.")
     return
 end
 
