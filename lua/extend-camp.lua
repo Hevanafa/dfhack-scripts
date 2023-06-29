@@ -34,13 +34,14 @@ for _, site in pairs(df.global.world.world_data.sites) do
 
         print_min_max(site)
 
-        -- return
+        -- do return end
 
         -- Note: change the props here, but try to debug beforehand
-        site.rgn_max_x = site.rgn_max_x + 1
-        site.global_max_x = site.global_max_x + 1
-        -- site.global_max_y = site.global_max_y + 1
+        -- site.rgn_max_x = site.rgn_max_x + 1
+        -- site.global_max_x = site.global_max_x + 1
+        -- site.global_min_y = site.global_min_y - 1
         -- site.rgn_max_y = site.rgn_max_y + 1
+        site.rgn_min_y = site.rgn_min_y - 1
 
         -- Fail-safe
         if site.rgn_max_x < site.rgn_min_x then

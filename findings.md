@@ -515,3 +515,7 @@ After killing a demon, it is **strongly** recommended not to touch the corpse.  
 For some reason, the demons at the surface (if any) can teleport & find the player pretty quickly.  Added with how fast they run, it's terrifying.
 
 Demons can be killed by crushing them under a constructed floor trap linked with a support & a lever.
+
+
+29-06-2023
+Idea: Make a (prepared) fish to meat converter
