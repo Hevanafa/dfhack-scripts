@@ -525,3 +525,6 @@ Demons can be killed by crushing them under a constructed floor trap linked with
 
 29-06-2023
 Idea: Make a (prepared) fish to meat converter
+
+01-07-2023
+Idea: Try to milk animals
