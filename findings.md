@@ -159,6 +159,12 @@ Adventure mode: You can't.  You'll need to cheat for inorganic clay boulders or 
 2: north to south
 3: south to north
 
+Added 01-07-2023: Screw Pump Directions
+0: from north
+1: from east
+2: from south
+3: from west
+
 
 16-06-2023
 
