@@ -528,3 +528,8 @@ Idea: Make a (prepared) fish to meat converter
 
 01-07-2023
 Idea: Try to milk animals
+
+
+03-03-2024
+Try to get an item's value
+Hint: view-item-info.lua has it
