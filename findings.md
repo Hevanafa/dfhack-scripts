@@ -159,6 +159,12 @@ Adventure mode: You can't.  You'll need to cheat for inorganic clay boulders or 
 2: north to south
 3: south to north
 
+Added 01-07-2023: Screw Pump Directions
+0: from north
+1: from east
+2: from south
+3: from west
+
 
 16-06-2023
 
@@ -433,3 +439,92 @@ Found dfhack.items.getHolderUnit in `Lua API.txt`
 ## Maximum barrel capacity
 
 30 units of fish/raw fish
+
+24-06-2023
+
+## How to Retire at Your Own Camp
+
+1. Mark your important location first as a camp
+2. Build (key: b)
+3. Assign zones/rooms (key: z)
+4. Add location (key: a)
+5. Make it the main hall
+6. Close the build menu
+7. Shout to everyone (key: k)
+8. Claim this location for yourself
+9. Set the group name
+10. Be in the main hall
+
+
+## About Cage Traps
+
+I think it's possible to cage a live animal by first setting up a cage trap and then use `bodyswap` at that creature, and then finally walking into the trap.
+
+Edit: it's not possible to set up cage traps for some reason -- it doesn't get triggered or even finish being built
+
+
+## How to extend an existing camp
+
+Added `extend-camp.lua` script
+
+
+## Where actually is the date GUI?
+
+`hack/lua/plugins/dwarfmonitor.lua`
+~~I changed the default y from 1 to 2 like this:~~
+```lua
+DateWidget.ATTRS{
+    default_pos={x=-16,y=2},
+	-- ...
+}
+```
+
+Open `dfhack-config\dwarfmonitor.json` instead, and change the position Y to 1
+
+
+## How to resurrect a recently deceased unit
+
+Use `heva/lua/list-unit-ids`
+Find the unit that you want to resurrect
+Use `full-heal -r -unit [ID]`
+The corpse will stay there and your unit will return
+It's recommended to dispose of your corpse in a campfire or lava
+
+
+## How much exactly is the capacity of a pouch?
+
+100 units of something
+
+1600 coins in total
+
+
+25-06-2023
+
+Found "WorldSiteRealization"
+- mini_rivers
+- mini_tiles
+- mini_colors
+- road_map
+- river_map
+- building_map
+- flags_map
+- zoom_tiles
+- zoom_colors
+- areas
+- building_well
+
+
+## About Demon Corpses
+
+After killing a demon, it is **strongly** recommended not to touch the corpse.  Walking over it is okay, but not (g)etting it.
+
+For some reason, the demons at the surface (if any) can teleport & find the player pretty quickly.  Added with how fast they run, it's terrifying.
+
+Demons can be killed by crushing them under a constructed floor trap linked with a support & a lever.
+
+
+29-06-2023
+Idea: Make a (prepared) fish to meat converter
+
+01-07-2023
+Idea: Try to milk animals
