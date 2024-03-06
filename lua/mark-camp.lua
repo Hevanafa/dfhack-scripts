@@ -9,6 +9,9 @@ local tx, ty = math.floor(map.region_x + unit.pos.x / 48), math.floor(map.region
 
 -- local tx,ty=advGlobalPos()
 
+-- Important: if you want to set the site type to Town, this chunk will reset.
+-- Known safe types to keep stuff: PlayerFortress, Camp, ImportantLocation
+
 for k, site in pairs(df.global.world.world_data.sites) do
     local tp={site.pos.x, site.pos.y}
     
@@ -18,9 +21,14 @@ for k, site in pairs(df.global.world.world_data.sites) do
         local translated = dfhack.TranslateName(site.name)
         print(("Site: %s"):format(#translated > 0 and translated or "(Unnamed site)"))
         -- print("Type: " .. site.type)
-        site.type = 9 -- CAMP
+
+		-- WorldSiteType
+        site.type = df.world_site_type.Camp -- CAMP
+		-- site.type = df.world_site_type.LairShrine
+		-- site.type = df.world_site_type.Fortress
         -- print("New site type: " .. site.type)
-        print("Marked this site as camp.")
+		
+        print(("Marked this site as %s."):format(df.world_site_type[site.type]))
         return
     end
 end
