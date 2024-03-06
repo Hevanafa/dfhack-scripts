@@ -1,4 +1,6 @@
 -- 05-03-2024
+-- Important: The written text will disappear on load game
+-- An alternative is to use slabs, since the text doesn't disappear.
 
 local cursor = copyall(df.global.cursor)
 
