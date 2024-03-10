@@ -1,6 +1,10 @@
 -- By Hevanafa, 17-06-2023
+-- Updated 10-03-2024
 --
 -- Based off of the script advfort.lua and in-site.lua
+
+-- Set the new site type
+local new_type = df.world_site_type.Camp
 
 local map = df.global.world.map
 local unit = df.global.world.units.active[0]
@@ -18,9 +22,9 @@ for k, site in pairs(df.global.world.world_data.sites) do
         local translated = dfhack.TranslateName(site.name)
         print(("Site: %s"):format(#translated > 0 and translated or "(Unnamed site)"))
         -- print("Type: " .. site.type)
-        site.type = 9 -- CAMP
+        site.type = new_type
         -- print("New site type: " .. site.type)
-        print("Marked this site as camp.")
+        print(("Marked this site as %s."):format(df.world_site_type[new_type]))
         return
     end
 end
