@@ -533,3 +533,33 @@ Idea: Try to milk animals
 03-03-2024
 Try to get an item's value
 Hint: view-item-info.lua has it
+```lua
+dfhack.items.getValue(item)
+```
+
+How to check if an item is on the ground
+```lua
+for _, item in pairs(df.global.world.items.all) do
+	if item.flags.on_ground then print("yes") end
+end
+```
+
+
+Learn how to exit early in Lua
+Update 10-03-2024: Use qerror(str) maybe?
+
+## 10-03-2024
+## Clays
+
+createitem BOULDER INORGANIC:CLAY
+createitem BOULDER INORGANIC:SILTY_CLAY
+createitem BOULDER INORGANIC:SANDY_CLAY
+createitem BOULDER INORGANIC:CLAY_LOAM
+createitem BOULDER INORGANIC:FIRE_CLAY
+
+Set the gather rate to 2 boulders per hour
+
+Plants mature in average within 25 days (GROWDUR: 300)
+
+Done: Make a script to revive ShrubDead (revive-shrub.lua)
+Done: Make a script to spawn plants & also kill it (turning the shrub into df.tile_type.ShrubDead) (harvest-shrub.lua)

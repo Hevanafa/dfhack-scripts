@@ -34,6 +34,8 @@ for _, plant in pairs(df.global.world.plants.all) do
             map_block.tiletype[pos.x % 16][pos.y % 16] = df.tiletype.ShrubDead
 
             break
+        else
+            qerror("This isn't a shrub!")
         end
     end
 end
