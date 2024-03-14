@@ -1,8 +1,8 @@
--- 10-03-2024
--- Idea: add XP to the player, try to make it the same as the usual dwarf gather shrub job
+-- 14-03-2024
+-- Based on harvest-shrub.lua
 -- Note: after using this script, if you want to build on top of the dead shrub, even though you've picked up the plant item, you should either (T)ravel or (w)ait to reload the local site information.  This will prevent freezing when building on top of the affected tiles.
 
-local mat_type_plant_structural = 419
+local mat_type_seeds = 422
 local player_unit = df.global.world.units.active[0]
 local pos = copyall(df.global.cursor)
 
@@ -19,17 +19,19 @@ for _, plant in pairs(df.global.world.plants.all) do
 
         if tiletype == df.tiletype.Shrub then
             -- print(plant.material)
-            -- print(dfhack.matinfo.decode(mat_type_plant_structural, plant.material))
+            -- print(dfhack.matinfo.decode(plant_structural_const, plant.material))
 
-            local new_item = df.item.find(
-                dfhack.items.createItem(
-                    df.item_type.PLANT, -1,
-                    mat_type_plant_structural, plant.material, player_unit
-                ))
+            local seed_count = 1 + math.random(0, 2)
 
-            new_item.pos = xyz2pos(pos2xyz(plant.pos))
-            new_item.stack_size = 1 + math.random(0, 2)
-            new_item:calculateWeight()
+            for a = 1, seed_count do
+                local new_item = df.item.find(
+                    dfhack.items.createItem(
+                        df.item_type.SEEDS, -1,
+                        mat_type_seeds, plant.material, player_unit
+                    ))
+
+                new_item.pos = xyz2pos(pos2xyz(plant.pos))
+            end
 
             -- kill the shrub
             map_block.tiletype[pos.x % 16][pos.y % 16] = df.tiletype.ShrubDead
