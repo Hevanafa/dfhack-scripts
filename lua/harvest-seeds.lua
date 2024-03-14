@@ -1,6 +1,7 @@
 -- 14-03-2024
 -- Based on harvest-shrub.lua
 -- Note: after using this script, if you want to build on top of the dead shrub, even though you've picked up the plant item, you should either (T)ravel or (w)ait to reload the local site information.  This will prevent freezing when building on top of the affected tiles.
+-- Use case: shrubs with pods, because it's impossible to get the seeds out of the pods.
 
 local mat_type_seeds = 422
 local player_unit = df.global.world.units.active[0]
