@@ -13,6 +13,9 @@ local tx, ty = math.floor(map.region_x + unit.pos.x / 48), math.floor(map.region
 
 -- local tx,ty=advGlobalPos()
 
+-- Important: if you want to set the site type to Town, this chunk will reset.
+-- Known safe types to keep stuff: PlayerFortress, Camp, ImportantLocation
+
 for k, site in pairs(df.global.world.world_data.sites) do
     local tp={site.pos.x, site.pos.y}
     

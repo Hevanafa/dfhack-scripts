@@ -530,6 +530,16 @@ Idea: Make a (prepared) fish to meat converter
 Idea: Try to milk animals
 
 
+## What to do when my camp is pretty laggy because of the demon/crundle infestation?
+05-03-2024
+How to know the cause is by using `heva/lua/list-units` script.
+
+Solution: Mark the camp as important location, leave the camp ([T]ravel), then mark the camp again.
+
+## Is it possible to cook demon meat in adventurer mode?
+No, the meat are all going to be stored in the kitchen & nothing happens.
+
+This also applies to the fat.  It's not possible to turn it into tallow.
 03-03-2024
 Try to get an item's value
 Hint: view-item-info.lua has it
