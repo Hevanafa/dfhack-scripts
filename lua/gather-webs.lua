@@ -11,6 +11,7 @@ function get_dist(a, b)
 		math.abs(a.pos.y - b.pos.y)
 end
 
+local count = 0
 -- webs have THREAD item type
 -- giant brown recluse spider web: 157
 -- type: class Item
@@ -21,7 +22,12 @@ for _, item in pairs(df.global.world.items.all) do
 		item.flags.spider_web then
 
 		item.flags.spider_web = false
+		count = count + 1
     end
+end
+
+if count > 0 then
+	print(("Converted %d webs into threads"):format(count))
 end
 
 -- for _, item in pairs(df.global.world.items.all) do
