@@ -573,3 +573,27 @@ Plants mature in average within 25 days (GROWDUR: 300)
 
 Done: Make a script to revive ShrubDead (revive-shrub.lua)
 Done: Make a script to spawn plants & also kill it (turning the shrub into df.tile_type.ShrubDead) (harvest-shrub.lua)
+
+## 19-03-2024
+
+### How to add the site type in advfort view
+
+in advfort.lua, under the function usetool:update_site()
+Change along these lines:
+```lua
+    if site then
+        site_label:itemById("site").text = ("%s (%s)"):format(
+            dfhack.TranslateName(site.name),
+            df.world_site_type[site.type])
+```
+
+### How to turn off date & weather widgets
+Open `dfhack-config\overlay.json`, then set the properties `dwarfmonitor.date` and `dwarfmonitor.weather` to `"enabled": false`
+
+After that, restart the game.
+
+
+mode=mode-1
+self.subviews.siteLabel
+
+self.subviews.actionList
