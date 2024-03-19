@@ -597,3 +597,9 @@ mode=mode-1
 self.subviews.siteLabel
 
 self.subviews.actionList
+
+## How to add a custom keybinding for advfort_custom
+Open `\hack\init\dfhack.keybindings.init` and `\dfhack.init`, then change the line that uses `advfort` (either comment or delete it), then add this line:
+```
+keybinding add Ctrl-T@dungeonmode heva/advfort_custom
+```
